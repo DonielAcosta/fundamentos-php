@@ -21,23 +21,41 @@ class Curso {
         // Ordenar tags alfabéticamente al crear el curso
         $this->sortTags();
     }
-    public function getTitle() {
-        return $this->title;
-    }
-    public function getSubtitle() {
-        return $this->subtitle;
-    }
-    public function getDescription() {
-        return $this->description;
-    }
-    public function getAuthor() {
-        return $this->author;
-    }
-    public function getDate() {
-        return $this->date;
-    }
+    // public function getTitle() {
+    //     return $this->title;
+    // }
+    // public function getSubtitle() {
+    //     return $this->subtitle;
+    // }
+    // public function getDescription() {
+    //     return $this->description;
+    // }
+    // public function getAuthor() {
+    //     return $this->author;
+    // }
+    // public function getDate() {
+    //     return $this->date;
+    // }
     public function getTags() {
         return $this->tags;
+    }
+    public function __get($property) {  
+        if(property_exists($this, $property)) {
+            return $this->$property;
+        }
+        return null;
+    }
+    public function __toString() {
+        $html = "<h1>{$this->title}</h1>";
+        $html .= "<p>{$this->description}</p>";
+        $html .= "<p>{$this->author}</p>";
+        $html .= "<p>{$this->date}</p>";
+        $html .= "<ul>";
+        foreach($this->tags as $tag) {
+            $html .= "<li>{$tag}</li>";
+        }
+        $html .= "</ul>";
+        return $html;
     }
     public function addTag($tag): void {
         // Validar que el tag no esté vacío
