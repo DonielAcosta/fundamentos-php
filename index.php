@@ -4,9 +4,10 @@
  * Uso de clases separadas, encapsulación y métodos
  */
 
-// Incluir la clase Curso
-require_once 'Curso.php';
+require __DIR__ . '/vendor/autoload.php';
 
+use App\Curso;
+use App\CursoType;
 // Crear instancia del curso con tags iniciales
 $curso = new Curso(
     "Curso Profesional de PHP y Laravel",
@@ -14,23 +15,11 @@ $curso = new Curso(
     "Domina PHP desde cero hasta nivel avanzado y aprende Laravel, el framework más popular de PHP. Construye aplicaciones web modernas, seguras y escalables.",
     "Doniel Acosta",
     "2025-11-21",
-    array("HTML", "CSS", "JavaScript", "PHP", "Laravel", "MySQL", "PostgreSQL", "MongoDB", "Redis")
+    array("HTML", "CSS", "JavaScript", "PHP", "Laravel", "MySQL", "PostgreSQL", "MongoDB", "Redis"),
+    CursoType::FREE
 );
 
-// Agregar tags adicionales (se validará que no sean duplicados)
-$curso->addTag("Python");
-$curso->addTag("JavaScript"); // Duplicado - no se agregará
-$curso->addTag("React");
-$curso->addTag("Node.js");
-$curso->addTag("Express");
-$curso->addTag("MongoDB"); // Duplicado - no se agregará
-$curso->addTag("PostgreSQL"); // Duplicado - no se agregará
 
-// Asegurar que los tags estén ordenados alfabéticamente
-$curso->sortTags();
-
-// Obtener información del curso
-$totalTags = count($curso->getTags());
 ?>
 <!DOCTYPE html>
 <html lang="en">

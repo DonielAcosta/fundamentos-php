@@ -3,6 +3,10 @@
  * Clase Curso
  * Representa un curso con toda su información
  */
+namespace App;
+
+use App\CursoType;
+
 class Curso {
     protected    $title;
     protected $subtitle;
@@ -10,7 +14,7 @@ class Curso {
     protected $author;
     protected $date;
     protected $tags;
-
+    protected $type;
     public function __construct($title, $subtitle, $description, $author, $date, $tags) {
         $this->title = $title;
         $this->subtitle = $subtitle;
@@ -18,6 +22,7 @@ class Curso {
         $this->author = $author;
         $this->date = $date;
         $this->tags = $tags;
+        $this->type = CursoType::FREE;
         // Ordenar tags alfabéticamente al crear el curso
         $this->sortTags();
     }
@@ -46,7 +51,7 @@ class Curso {
         return null;
     }
     public function __toString() {
-        $html = "<h1>{$this->title}</h1>";
+        $html = "<h1>{$this->title} - {$this->type}</h1>";
         $html .= "<p>{$this->description}</p>";
         $html .= "<p>{$this->author}</p>";
         $html .= "<p>{$this->date}</p>";
