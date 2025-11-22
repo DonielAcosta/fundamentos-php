@@ -13,6 +13,8 @@
         "MongoDB",
         "Redis"
     );
+
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -26,11 +28,11 @@
     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati consequuntur veritatis, unde omnis vel numquam, amet sed molestias sit repellat perspiciatis ullam assumenda voluptatem dolore. Obcaecati quisquam corporis repudiandae eos!</p>
 
     <p>
-        <strong>Etiquetas del curso:</strong>
+        <strong>Primeras 3 etiquetas del curso:</strong>
         <ul>
-            <?php foreach($tags as $tag): ?>
-                <li><?= $tag ?></li>
-            <?php endforeach; ?>
+            <li><?= $tags[0] ?></li>
+            <li><?= $tags[1] ?></li>
+            <li><?= $tags[2] ?></li>
         </ul>
     </p>
 </body>
