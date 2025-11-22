@@ -16,7 +16,15 @@ class Curso {
         $this->tags = $tags;
     }
 }
-$curso= new Curso("Curso  Profesional de PHP y Laravel", "Aprende a crear aplicaciones web profesionales con PHP y Laravel", "Aprende a crear aplicaciones web profesionales con PHP y Laravel", "Doniel Acosta", "2025-11-21", array("HTML", "CSS", "JavaScript", "PHP", "Laravel", "MySQL", "PostgreSQL", "MongoDB", "Redis"));
+
+$curso = new Curso(
+    "Curso Profesional de PHP y Laravel",
+    "Aprende a crear aplicaciones web profesionales con PHP y Laravel",
+    "Aprende a crear aplicaciones web profesionales con PHP y Laravel",
+    "Doniel Acosta",
+    "2025-11-21",
+    array("HTML", "CSS", "JavaScript", "PHP", "Laravel", "MySQL", "PostgreSQL", "MongoDB", "Redis")
+);
 
 ?>
 <!DOCTYPE html>
